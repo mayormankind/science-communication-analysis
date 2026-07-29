@@ -1,0 +1,227 @@
+PRESENTATION SCRIPT — Group 7
+Science Communication Channels and Public Trust: A 68-Country Analysis
+~1,350 words / ~10 minutes read aloud
+Sections: Research Question | Dataset | XSD/XPath/XQuery Demo | Key Results | Conclusion
+
+=============================================================================
+SLIDE 1 — TITLE SLIDE
+=============================================================================
+
+Good [morning/afternoon], everyone. My name is [NAME], and I'm presenting on
+behalf of Group 7. Our project is titled "Science Communication Channels and
+Public Trust: A 68-Country Analysis." We're joined today by MAKINDE,
+MOYINOLUWA, NWACHUKWU, OLAKUNLE, OLORUNFUNMILAYO, OLORUNTOBI, and OLUWARANTI.
+Over the next ten minutes, we'll take you through our research question,
+our dataset, the XML modelling we did, our four analyses, and what we found.
+
+=============================================================================
+SLIDE 2 — RESEARCH QUESTION AND MOTIVATION
+=============================================================================
+
+The question at the heart of this project is a timely one: How do science
+communication channels and demographic factors influence public trust in
+science across cultures?
+
+We live in a world where the same scientific consensus on vaccines, climate,
+or nutrition can be received very differently in Lagos, Tokyo, or Berlin. A
+large part of that difference, we argue, comes from where people get their
+science information. Someone who reads scientific journals may have a very
+different relationship with scientists than someone who relies primarily on
+Facebook or WhatsApp. And yet almost no study had tested this idea at truly
+global scale — across dozens of countries, dozens of languages, with a
+harmonised questionnaire — until the TISP dataset came along.
+
+We hypothesised, first, that greater communication frequency would predict
+higher trust; second, that science knowledge would mediate that relationship;
+and third, that there would be meaningful variation in trust between countries
+even after controlling for individual factors. These three hypotheses drove
+all four of our analyses.
+
+=============================================================================
+SLIDE 3 — DATASET
+=============================================================================
+
+Our data come from the TISP dataset — the Trust in Science and Science-
+Related Populism survey — published in Scientific Data in 2025 by Mede,
+Cologna, and a consortium of 100 researchers. The survey reached 71,922
+respondents in 68 countries and territories, fielded between November 2022
+and August 2023, in 37 languages. It is publicly available from the Open
+Science Framework at osf.io/5c3qd under a CC BY 4.0 licence, and the
+ethical exemption was granted by the Harvard University Area Committee on
+the Use of Human Subjects.
+
+The key variables we used were: trust in scientists, measured as the mean
+of 12 Likert items on a one-to-five scale; science knowledge, proxied by
+trust in the scientific method, again one to five; communication frequency,
+as the mean of ten channel-frequency questions asking how often respondents
+get science information from newspapers, TV, social media, books, and so on;
+and primary communication channel, derived by identifying which of those ten
+SCIINFO columns had the highest score for each respondent. We also used
+country income group from World Bank classifications, and the country code
+for multi-level grouping. Our full data dictionary, documenting 47 key
+variables, is at data/metadata/data_dictionary.csv in the repository.
+
+After removing 39 cases with missing data on our key variables — less than
+0.1 percent — our analytic sample was 71,883 respondents in 68 countries.
+
+=============================================================================
+SLIDE 4 — XML / XSD MODELLING (DEMO SECTION)
+=============================================================================
+
+Now let me turn to the XML modelling component, which is a core requirement
+of this assessment.
+
+We designed an XML schema — tisp_schema.xsd — that captures the full
+structure of the TISP survey. The schema has a root element, TISP_Dataset,
+containing Metadata and a Respondents collection. Each Respondent element
+has six child elements: Demographics, Trust_Scale, Populism, Communication,
+Climate, and PoliticalReligious. This mirrors the major construct domains
+of the original TISP questionnaire.
+
+To ensure data quality, we applied XSD constraints directly in the schema.
+Likert scores are typed as decimal values between one and five using a shared
+LikertScoreType restriction. Primary communication channel is constrained to
+a fixed enumeration: Social Media, Television, Newspapers, Online News Sites,
+Scientific Journals, Family/Friends, and Other. Country income group is also
+enumerated. This means that if you tried to load a respondent with a trust
+score of six, or a channel value of "YouTube," the schema validator would
+immediately flag it.
+
+[PRESENTER: If you have a BaseX screenshot showing this — refer to it here]
+
+We generated a 3,000-respondent XML file from the real data using our
+csv_to_xml.py script and validated it against the schema using Python's lxml
+library. The validation printed: VALID: True — zero schema errors.
+
+For XPath, we implemented the expression specified in the assessment outline:
+  //tisp:Respondent where Trust_Scale/overall is less than 3
+  and Communication/primary equals Social Media
+This extracts low-trust respondents whose primary science information source
+is social media — a combination that our results confirm is associated with
+the lowest trust scores in the dataset.
+
+For XQuery, we implemented the required per-country summary query, which for
+each of the 68 countries returns the mean trust score and the dominant
+communication channel. This feeds directly into the choropleth visualisation
+you'll see in a moment. All XPath and XQuery scripts are documented in
+xml/xpath_xquery_scripts.md.
+
+=============================================================================
+SLIDE 5 — KEY RESULTS: GEOGRAPHIC PATTERN
+=============================================================================
+
+Let me now walk through our four analyses, starting with the choropleth map.
+
+[PRESENTER: Show or describe figures/trust_choropleth.html]
+
+The choropleth plots mean trust in scientists on a Red-Yellow-Blue colour
+scale, ranging from approximately 3.15 to 4.24. A few patterns stand out
+immediately. South Asia — India in particular, at a mean of 4.24 — and
+sub-Saharan Africa, including Nigeria at 3.95 and Ghana at 3.88, cluster
+at the high-trust end. Australia and New Zealand, at 3.94 and 3.93, are
+the highest-trust among high-income countries. At the low-trust end,
+Eastern Europe and Central Asia are notably darker: Kazakhstan at 3.15,
+Albania at 3.16, Russia at 3.23. Japan, despite its world-class science
+infrastructure, also clusters low at 3.37 — a pattern consistent with
+cross-cultural research on institutional deference.
+
+Interestingly, our descriptive table shows that lower-middle-income
+countries have the highest mean trust at 3.800, while upper-middle-income
+countries have the lowest at 3.552. This non-linear relationship between
+national wealth and trust in science is one of the most striking descriptive
+findings of the project.
+
+=============================================================================
+SLIDE 6 — KEY RESULTS: MULTI-LEVEL MODEL
+=============================================================================
+
+For our first inferential analysis, we fitted a multi-level regression of
+trust on communication frequency and science knowledge, with a random
+intercept for country. The model converged successfully with 71,883
+respondents and 68 countries.
+
+The intraclass correlation coefficient — our key output — was 0.105. This
+means that 10.5 percent of the total variance in trust is explained by
+country-level factors, confirming that where you live matters, independently
+of your individual communication habits and science knowledge. This justifies
+our use of multi-level modelling: treating all 71,000 respondents as if they
+were independent would have been a serious methodological error.
+
+At the individual level, science knowledge was the stronger predictor:
+each one-unit increase on the knowledge scale was associated with a 0.317-
+point increase in trust, controlling for communication frequency, p less than
+0.001. Communication frequency also had a significant positive association
+with trust: beta equals 0.067, p less than 0.001.
+
+=============================================================================
+SLIDE 7 — KEY RESULTS: SEM MEDIATION
+=============================================================================
+
+Our second analysis was a structural equation model testing the mediation
+pathway from communication frequency through science knowledge to trust.
+
+The results clearly support partial mediation. Path a — communication
+frequency to knowledge — had a coefficient of 0.139, p less than 0.001:
+more frequent science exposure is associated with higher trust in the
+scientific method. Path b — knowledge to trust — was 0.325, p less than
+0.001: higher epistemic orientation is strongly associated with trusting
+scientists. The indirect effect, a times b, was 0.045: this is the portion
+of the communication-trust relationship that operates through the knowledge
+pathway. The direct effect, c-prime, was 0.070, also significant, giving a
+total effect of 0.115.
+
+What this tells us is that communication works on trust in two ways: by
+building knowledge — the epistemic route — and by a smaller direct exposure
+effect, possibly through familiarity and parasocial contact. But knowledge
+is clearly the more powerful lever.
+
+=============================================================================
+SLIDE 8 — KEY RESULTS: ANOVA
+=============================================================================
+
+Our fourth analysis was a one-way ANOVA testing whether mean trust differs
+across the seven primary communication channel groups.
+
+The result was highly significant: F equals 27.963, p is 1.46 times ten to
+the minus 33 — so essentially zero. Newspaper users had the highest mean
+trust at 3.665, followed by television at 3.652. Social media users had a
+mean of 3.579 and family/friends users 3.565 — the lowest two groups.
+
+The differences are statistically robust but practically modest: about 0.10
+of a scale point separates the top from the bottom. The boxplots show
+broadly overlapping distributions, which cautions against treating channel
+as the primary driver of trust at the individual level. Selection effects
+are almost certainly present: people who already trust science may gravitate
+toward newspapers and away from social media.
+
+=============================================================================
+SLIDE 9 — CONCLUSION AND RECOMMENDATIONS
+=============================================================================
+
+So what do we conclude?
+
+Science communication channels and science knowledge jointly and
+significantly predict public trust in scientists across 68 countries. Around
+10.5 percent of trust variance is explained at the country level, confirming
+that culture and institutions matter beyond individual-level communication
+behaviour. The knowledge mediation pathway is real and substantial: the most
+direct route to raising trust through communication is one that genuinely
+builds understanding, not one that simply maximises reach.
+
+Our practical recommendation for science communicators and policymakers is a
+dual intervention: invest in quality science journalism through traditional
+and digital channels — channels associated with higher trust — while
+simultaneously supporting science literacy education, so that communication
+exposure translates into genuine knowledge gains rather than passive
+familiarity.
+
+Future research should use longitudinal or experimental designs to establish
+causal direction, and should test whether the communication-knowledge-trust
+pathway holds equally across all 68 countries or whether there are important
+cross-national moderators.
+
+Thank you. We're happy to take questions.
+
+=============================================================================
+END OF SCRIPT
+=============================================================================

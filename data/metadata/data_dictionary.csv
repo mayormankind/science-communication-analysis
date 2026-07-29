@@ -1,0 +1,139 @@
+column_name,dtype,n_missing,pct_missing,n_unique,example_values,proposed_role
+LAB,str,0,0.0,80,Bajrami; Nobre; Stanley,
+COUNTRY_CODE,str,0,0.0,68,ALB; ARG; AUS,grouping/country - ISO-3 country identifier for multi-level model grouping
+COUNTRY_NAME,str,0,0.0,68,Albania; Argentina; Australia,
+COUNTRY_CNCY,str,0,0.0,54,ALL; ARS; AUD,
+COUNTRY_CNCY_RATE,str,0,0.0,768,"0,009204000; 0,009249000; 0,009250000",
+COUNTRY_CONT,str,0,0.0,6,Europe; Latin America; Australia/Oceania,
+Start,str,0,0.0,41311,13/02/2023 12:43; 13/02/2023 13:03; 13/02/2023 13:05,
+End,str,0,0.0,42871,13/02/2023 12:48; 13/02/2023 13:20; 13/02/2023 13:16,
+DATE,str,0,0.0,210,2023-02-13; 2023-02-14; 2023-02-15,
+Response_TYPE,int64,0,0.0,1,0,
+Progress,int64,0,0.0,56,100; 25; 77,
+Duration,int64,0,0.0,6990,276; 1040; 926,
+Recorded,str,0,0.0,42726,13/02/2023 12:48; 13/02/2023 13:20; 13/02/2023 13:16,
+ID_QUALTRICS,str,0,0.0,71922,R_3MhQ8hLwbWU3gSN; R_1dnWoydDZ1TGRrl; R_2bQ5rmpztSkjAzu,respondent ID - unique identifier per survey response
+ID_POLLCMPNY,str,6195,8.61,65727,235904587381854.00; 235905781188692.00; 235905920300151.00,
+UserLanguage,str,0,0.0,26,EN; BG; PT,
+CONSENT,int64,0,0.0,1,1,
+DEM_GENDER,float64,1311,1.82,3,1.0; 0.0; 2.0,demographic control - gender (1=male 2=female 3=other 4=prefer not to say)
+DEM_GENDER_male,float64,2198,3.06,2,1.0; 0.0,
+DEM_GENDER_2_TEXT,str,3334,4.64,767,"-99; Briliana ; Ai, Mashkull, Heteroseksual",
+DEM_AGE,float64,208,0.29,77,26.0; 37.0; 51.0,demographic control - respondent age in years
+DEM_AGEGRP,str,208,0.29,5,18-29; 30-39; 50-59,"demographic control - age group category (e.g. 18-29, 30-39)"
+DEM_AGEGRP_colltop2,str,208,0.29,4,18-29; 30-39; 50+,
+DEM_AGEGRP_colltop3,str,208,0.29,3,18-29; 30-39; 40+,
+DEM_AGEGRP_collbot2,str,208,0.29,4,18-39; 50-59; 40-49,
+DEM_EDU,float64,39,0.05,4,4.0; 3.0; 1.0,demographic control - education level
+DEM_EDU_uni,float64,39,0.05,2,1.0; 0.0,
+DEM_EDU_collbot2,float64,39,0.05,3,3.0; 2.0; 1.0,
+DEM_EDU_collbot3,float64,39,0.05,2,2.0; 1.0,
+ATTCHECK_NUMBER,int64,0,0.0,4,213; 23; 214,
+SCIINFO_newspapersmags,float64,117,0.16,7,5.0; 2.0; 6.0,predictor - frequency of science info from newspapers/magazines (1-5 Likert)
+SCIINFO_tvradio,float64,285,0.4,7,5.0; 3.0; 7.0,predictor - frequency of science info from TV/radio (1-5 Likert)
+SCIINFO_newswebsitesapps,float64,837,1.16,7,5.0; 7.0; 6.0,predictor - frequency of science info from news websites/apps (1-5 Likert)
+SCIINFO_videospodcasts,float64,444,0.62,7,4.0; 7.0; 6.0,predictor - frequency of science info from videos/podcasts (1-5 Likert)
+SCIINFO_filmsseries,float64,459,0.64,7,5.0; 1.0; 7.0,predictor - frequency of science info from films/series (1-5 Likert)
+SCIINFO_books,float64,571,0.79,7,4.0; 2.0; 1.0,predictor - frequency of science info from books/journals (1-5 Likert)
+SCIINFO_socialmedia,float64,377,0.52,7,5.0; 6.0; 7.0,predictor - frequency of science info from social media (1-5 Likert)
+SCIINFO_messengers,float64,497,0.69,7,4.0; 2.0; 6.0,predictor - frequency of science info from messaging apps (1-5 Likert)
+SCIINFO_museumszoos,float64,511,0.71,7,5.0; 1.0; 4.0,predictor - frequency of science info from museums/zoos (1-5 Likert)
+SCIINFO_rlconversations,float64,457,0.64,7,4.0; 5.0; 7.0,predictor - frequency of science info from real-life conversations (1-5 Likert)
+SCIENGAGE_conversations,float64,43,0.06,7,5.0; 6.0; 7.0,
+SCIENGAGE_messengers,float64,127,0.18,7,4.0; 3.0; 6.0,
+SCIENGAGE_socialmedia,float64,159,0.22,7,5.0; 4.0; 1.0,
+SCIENGAGE_publicprotests,float64,177,0.25,7,5.0; 1.0; 2.0,
+BENEFIT_OPEN,str,35815,49.8,33201,"good; Perfitone me shume shtresa e pasur, shtresa e varfer perfiton shume me vone dhe ne sasi te limitaur; Njerezimi. 
+Shpikejet lehtesojne jeten e permiresojne ate.",
+TRUST_OPEN,str,35647,49.56,33900,"Arsyetimi mbi fakte re provuara ; Faktet qe ai nxjer, studimet; Shkencetari perdor metoda dhe  fakte per te shpjeguar dhe vertetuar  nje dukuri te caktuar .",
+BENEFIT_ONESELF,float64,18,0.03,5,4.0; 1.0; 3.0,
+BENEFIT_REGION_MOST,float64,193,0.27,6,5.0; 6.0; 4.0,
+BENEFIT_REGION_LEAST,float64,341,0.47,6,1.0; 6.0; 5.0,
+GOALS_PRIO_health,float64,67,0.09,5,4.0; 5.0; 3.0,
+GOALS_PRIO_energy,float64,106,0.15,5,4.0; 5.0; 3.0,
+GOALS_PRIO_poverty,float64,107,0.15,5,4.0; 5.0; 3.0,
+GOALS_PRIO_defense,float64,130,0.18,5,3.0; 2.0; 1.0,
+GOALS_TACKLE_health,float64,53,0.07,5,4.0; 3.0; 2.0,
+GOALS_TACKLE_energy,float64,104,0.14,5,3.0; 1.0; 5.0,
+GOALS_TACKLE_poverty,float64,124,0.17,5,4.0; 1.0; 3.0,
+GOALS_TACKLE_defense,float64,176,0.24,5,3.0; 5.0; 4.0,
+NORMPERC_integrate,float64,70,0.1,5,4.0; 1.0; 5.0,
+NORMPERC_advocate,float64,86,0.12,5,3.0; 1.0; 2.0,
+NORMPERC_communicate,float64,603,0.84,5,3.0; 1.0; 2.0,
+NORMPERC_involved,float64,86,0.12,5,4.0; 5.0; 3.0,
+NORMPERC_outreach,float64,94,0.13,5,4.0; 5.0; 1.0,
+NORMPERC_independent,float64,1144,1.59,5,4.0; 2.0; 5.0,
+WILLVUL_ppl,float64,2478,3.45,5,4.0; 3.0; 5.0,
+WILLVUL_gov,float64,1468,2.04,5,3.0; 4.0; 5.0,
+WILLVUL_you,float64,1472,2.05,5,4.0; 2.0; 5.0,
+TRUST_SCI_expert,float64,30,0.04,5,4.0; 1.0; 2.0,trust item - scientists are experts (1-5 Likert)
+TRUST_SCI_honest,float64,37,0.05,5,3.0; 1.0; 4.0,trust item - scientists are honest (1-5 Likert)
+TRUST_SCI_concerned,float64,38,0.05,5,4.0; 1.0; 3.0,trust item - scientists are concerned about public welfare (1-5 Likert)
+TRUST_SCI_open,float64,39,0.05,5,3.0; 1.0; 2.0,trust item - scientists are open to other viewpoints (1-5 Likert)
+TRUST_SCI_intellig,float64,35,0.05,5,4.0; 2.0; 5.0,trust item - scientists are intelligent (1-5 Likert)
+TRUST_SCI_ethical,float64,33,0.05,5,4.0; 1.0; 3.0,trust item - scientists behave ethically (1-5 Likert)
+TRUST_SCI_improve,float64,37,0.05,5,3.0; 1.0; 2.0,trust item - science improves quality of life (1-5 Likert)
+TRUST_SCI_trans,float64,33,0.05,5,4.0; 1.0; 2.0,trust item - scientists are transparent (1-5 Likert)
+TRUST_SCI_qualified,float64,39,0.05,5,4.0; 1.0; 5.0,trust item - scientists are qualified (1-5 Likert)
+TRUST_SCI_sincere,float64,41,0.06,5,3.0; 1.0; 2.0,trust item - scientists are sincere (1-5 Likert)
+TRUST_SCI_otherint,float64,49,0.07,5,4.0; 2.0; 3.0,trust item - scientists consider interests of others (1-5 Likert)
+TRUST_SCI_otherviews,float64,46,0.06,5,3.0; 2.0; 4.0,trust item - scientists consider views of others (1-5 Likert)
+TRUST_METHOD,float64,16,0.02,5,4.0; 5.0; 3.0,predictor/mediator - trust in the scientific method (1-5 Likert; science knowledge proxy)
+TRUST_PEW,float64,33,0.05,5,4.0; 1.0; 3.0,
+OUTSPOKEN_othersthink,float64,40,0.06,5,4.0; 3.0; 5.0,
+OUTSPOKEN_isolate,float64,40,0.06,5,3.0; 5.0; 4.0,
+OUTSPOKEN_against,float64,48,0.07,5,4.0; 3.0; 5.0,
+SCIPOP_common,float64,46,0.06,5,5.0; 2.0; 4.0,populism item - science should follow common people (1-5 Likert)
+SCIPOP_good,float64,51,0.07,5,5.0; 1.0; 3.0,populism item - science for the common good (1-5 Likert)
+SCIPOP_advantage,float64,57,0.08,5,5.0; 2.0; 3.0,populism item - science advantages elite (1-5 Likert)
+SCIPOP_cahoots,float64,59,0.08,5,5.0; 2.0; 4.0,populism item - scientists in cahoots with powerful (1-5 Likert)
+SCIPOP_influence,float64,51,0.07,5,5.0; 2.0; 3.0,populism item - scientists influenced by politics (1-5 Likert)
+SCIPOP_involved,float64,35,0.05,5,5.0; 2.0; 4.0,populism item - scientists too involved with government (1-5 Likert)
+SCIPOP_lifeexp,float64,31,0.04,5,5.0; 3.0; 2.0,populism item - science does not reflect lived experience (1-5 Likert)
+SCIPOP_rely,float64,38,0.05,5,5.0; 3.0; 2.0,populism item - cannot rely on scientists (1-5 Likert)
+ATTCHECK_RES,int64,0,0.0,6,1; 4; 3,
+SDO_allgroupsconsider,float64,1197,1.66,10,7.0; 9.0; 8.0,
+SDO_notpushequality,float64,1214,1.69,10,7.0; 1.0; 2.0,
+SDO_equalityideal,float64,1197,1.66,10,8.0; 10.0; 2.0,
+SDO_superiordominate,float64,1199,1.67,10,8.0; 1.0; 10.0,
+CLIM_TRUST,float64,17,0.02,5,4.0; 1.0; 3.0,climate attitude - trust in climate scientists (1-5 Likert)
+CLIM_EMO_helpless,float64,172,0.24,5,5.0; 3.0; 4.0,
+CLIM_EMO_anxious,float64,537,0.75,5,1.0; 4.0; 5.0,
+CLIM_EMO_optimistic,float64,164,0.23,5,5.0; 2.0; 3.0,
+CLIM_EMO_angry,float64,183,0.25,5,4.0; 3.0; 1.0,
+CLIM_EMO_guilty,float64,180,0.25,5,4.0; 2.0; 1.0,
+CLIM_EMO_ashamed,float64,1244,1.73,5,4.0; 2.0; 1.0,
+CLIM_EMO_depressed,float64,186,0.26,5,5.0; 1.0; 3.0,
+CLIM_EMO_pessimistic,float64,176,0.24,5,5.0; 4.0; 1.0,
+CLIM_EMO_indifferent,float64,1228,1.71,5,4.0; 1.0; 2.0,
+CLIM_GOV_concerns,float64,54,0.08,5,5.0; 1.0; 2.0,
+CLIM_GOV_doingenough,float64,63,0.09,5,4.0; 1.0; 2.0,
+CLIM_GOV_dismisspeople,float64,66,0.09,5,5.0; 2.0; 3.0,
+CLIM_GOV_science,float64,79,0.11,5,4.0; 1.0; 2.0,
+CLIM_GOV_futuregens,float64,88,0.12,5,5.0; 1.0; 2.0,
+CLIM_GOV_trustworthy,float64,104,0.14,5,4.0; 1.0; 2.0,
+CLIM_GOV_lying,float64,118,0.16,5,5.0; 2.0; 1.0,
+CLIM_POLSUPPORT_fueltax,float64,1607,2.23,4,3.0; 2.0; 1.0,climate policy item - support for fuel tax (1-5 Likert)
+CLIM_POLSUPPORT_publictransport,float64,1619,2.25,4,3.0; 2.0; 4.0,climate policy item - support for public transport investment (1-5 Likert)
+CLIM_POLSUPPORT_sustenergy,float64,1621,2.25,4,3.0; 2.0; 1.0,climate policy item - support for sustainable energy (1-5 Likert)
+CLIM_POLSUPPORT_protection,float64,1625,2.26,4,3.0; 2.0; 4.0,climate policy item - support for environmental protection (1-5 Likert)
+CLIM_POLSUPPORT_foodtax,float64,1638,2.28,4,2.0; 3.0; 1.0,climate policy item - support for food tax (1-5 Likert)
+CLIM_WEATHERPAST_floods,float64,434,0.6,5,3.0; 4.0; 5.0,
+CLIM_WEATHERPAST_heatwaves,float64,462,0.64,5,3.0; 4.0; 5.0,
+CLIM_WEATHERPAST_heavystorms,float64,463,0.64,5,3.0; 4.0; 5.0,
+CLIM_WEATHERPAST_wildfires,float64,475,0.66,5,2.0; 5.0; 4.0,
+CLIM_WEATHERPAST_heavyrain,float64,460,0.64,5,3.0; 4.0; 5.0,
+CLIM_WEATHERPAST_droughts,float64,485,0.67,5,3.0; 4.0; 5.0,
+CLIM_WEATHERFUTU_floods,float64,3893,5.41,5,4.0; 5.0; 2.0,
+CLIM_WEATHERFUTU_heatwaves,float64,3928,5.46,5,4.0; 3.0; 5.0,
+CLIM_WEATHERFUTU_heavystorms,float64,3931,5.47,5,3.0; 4.0; 5.0,
+CLIM_WEATHERFUTU_wildfires,float64,3955,5.5,5,4.0; 5.0; 3.0,
+CLIM_WEATHERFUTU_heavyrain,float64,3951,5.49,5,3.0; 2.0; 4.0,
+CLIM_WEATHERFUTU_droughts,float64,3980,5.53,5,4.0; 3.0; 5.0,
+DEM_INCOME,str,4377,6.09,3728,"2,0000000000e+00; 6,0000000000e+05; 2,4000000000e+05",demographic control - self-reported household income category
+DEM_INCOME_USD,str,4377,6.09,27151,"1,84080000000000e-02; 5,52240000000000e+03; 2,20896000000000e+03",
+DEM_INCOME_USD_log,str,5254,7.31,26477,"-3,994969926249072323; 8,616567827389266299; 7,700277095515111192",
+DEM_POL_conservative,float64,14858,20.66,5,4.0; 1.0; 2.0,
+DEM_POL_right,float64,16203,22.53,5,4.0; 1.0; 3.0,demographic control - political orientation (right-left scale)
+DEM_RELIGIOUS,float64,258,0.36,5,3.0; 4.0; 2.0,demographic control - religiosity (1-5 Likert scale)
+DEM_RESIDENCE,int64,0,0.0,2,1; 0,demographic control - area of residence (1=city center to 5=rural)

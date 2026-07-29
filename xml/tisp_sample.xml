@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tisp:TISP_Dataset xmlns:tisp="http://group7.tisp.org/schema"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://group7.tisp.org/schema tisp_schema.xsd">
+  <tisp:Metadata>
+    <tisp:DatasetName>TISP: Trust in Science and Science-Related Populism</tisp:DatasetName>
+    <tisp:SourceCitation>Mede, N. G., Cologna, V., Berger, S. et al. (2025). Perceptions of science, science communication, and climate change attitudes in 68 countries - the TISP dataset. Scientific Data, 12, 114.</tisp:SourceCitation>
+    <tisp:CollectionPeriod>
+      <tisp:Start>2022-11</tisp:Start>
+      <tisp:End>2023-08</tisp:End>
+    </tisp:CollectionPeriod>
+    <tisp:SampleSize>71922</tisp:SampleSize>
+    <tisp:CountryCount>68</tisp:CountryCount>
+    <tisp:License>CC BY 4.0</tisp:License>
+    <tisp:Repository>https://osf.io/5c3qd</tisp:Repository>
+  </tisp:Metadata>
+
+  <tisp:Respondents>
+    <tisp:Respondent id="R000001" country="NGA">
+      <tisp:Demographics>
+        <tisp:Gender>female</tisp:Gender>
+        <tisp:AgeGroup>25-34</tisp:AgeGroup>
+        <tisp:Education>Bachelor's degree</tisp:Education>
+        <tisp:Residence>urban</tisp:Residence>
+        <tisp:IncomeGroup>middle</tisp:IncomeGroup>
+        <tisp:CountryIncomeGroup>lower_middle_income</tisp:CountryIncomeGroup>
+      </tisp:Demographics>
+      <tisp:Trust_Scale>
+        <tisp:Item code="trust_1">2.5</tisp:Item>
+        <tisp:Item code="trust_2">2.0</tisp:Item>
+        <tisp:overall>2.3</tisp:overall>
+      </tisp:Trust_Scale>
+      <tisp:Populism>
+        <tisp:Item code="pop_1">3.8</tisp:Item>
+        <tisp:overall>3.6</tisp:overall>
+      </tisp:Populism>
+      <tisp:Communication>
+        <tisp:Channel>
+          <tisp:name>Social Media</tisp:name>
+          <tisp:usageFrequency>4.0</tisp:usageFrequency>
+        </tisp:Channel>
+        <tisp:Channel>
+          <tisp:name>Television</tisp:name>
+          <tisp:usageFrequency>2.5</tisp:usageFrequency>
+        </tisp:Channel>
+        <tisp:primary>Social Media</tisp:primary>
+        <tisp:frequency>4.0</tisp:frequency>
+        <tisp:scienceKnowledge>2.2</tisp:scienceKnowledge>
+      </tisp:Communication>
+      <tisp:Climate>
+        <tisp:attitude>4.1</tisp:attitude>
+        <tisp:policySupport>3.9</tisp:policySupport>
+        <tisp:behaviour>3.2</tisp:behaviour>
+      </tisp:Climate>
+      <tisp:PoliticalReligious>
+        <tisp:politicalAlignment>centre</tisp:politicalAlignment>
+        <tisp:religiosity>3.0</tisp:religiosity>
+      </tisp:PoliticalReligious>
+    </tisp:Respondent>
+
+    <tisp:Respondent id="R000002" country="DEU">
+      <tisp:Demographics>
+        <tisp:Gender>male</tisp:Gender>
+        <tisp:AgeGroup>45-54</tisp:AgeGroup>
+        <tisp:Education>Master's degree</tisp:Education>
+        <tisp:Residence>suburban</tisp:Residence>
+        <tisp:IncomeGroup>high</tisp:IncomeGroup>
+        <tisp:CountryIncomeGroup>high_income</tisp:CountryIncomeGroup>
+      </tisp:Demographics>
+      <tisp:Trust_Scale>
+        <tisp:Item code="trust_1">4.2</tisp:Item>
+        <tisp:Item code="trust_2">4.5</tisp:Item>
+        <tisp:overall>4.3</tisp:overall>
+      </tisp:Trust_Scale>
+      <tisp:Populism>
+        <tisp:Item code="pop_1">1.8</tisp:Item>
+        <tisp:overall>1.9</tisp:overall>
+      </tisp:Populism>
+      <tisp:Communication>
+        <tisp:Channel>
+          <tisp:name>Scientific Journals</tisp:name>
+          <tisp:usageFrequency>3.5</tisp:usageFrequency>
+        </tisp:Channel>
+        <tisp:Channel>
+          <tisp:name>Newspapers</tisp:name>
+          <tisp:usageFrequency>3.0</tisp:usageFrequency>
+        </tisp:Channel>
+        <tisp:primary>Scientific Journals</tisp:primary>
+        <tisp:frequency>3.5</tisp:frequency>
+        <tisp:scienceKnowledge>4.0</tisp:scienceKnowledge>
+      </tisp:Communication>
+      <tisp:Climate>
+        <tisp:attitude>4.6</tisp:attitude>
+        <tisp:policySupport>4.4</tisp:policySupport>
+        <tisp:behaviour>3.8</tisp:behaviour>
+      </tisp:Climate>
+      <tisp:PoliticalReligious>
+        <tisp:politicalAlignment>left</tisp:politicalAlignment>
+        <tisp:religiosity>1.5</tisp:religiosity>
+      </tisp:PoliticalReligious>
+    </tisp:Respondent>
+
+    <tisp:Respondent id="R000003" country="BRA">
+      <tisp:Demographics>
+        <tisp:Gender>female</tisp:Gender>
+        <tisp:AgeGroup>18-24</tisp:AgeGroup>
+        <tisp:Education>Secondary school</tisp:Education>
+        <tisp:Residence>rural</tisp:Residence>
+        <tisp:IncomeGroup>low</tisp:IncomeGroup>
+        <tisp:CountryIncomeGroup>upper_middle_income</tisp:CountryIncomeGroup>
+      </tisp:Demographics>
+      <tisp:Trust_Scale>
+        <tisp:Item code="trust_1">2.0</tisp:Item>
+        <tisp:Item code="trust_2">1.8</tisp:Item>
+        <tisp:overall>1.9</tisp:overall>
+      </tisp:Trust_Scale>
+      <tisp:Populism>
+        <tisp:Item code="pop_1">4.2</tisp:Item>
+        <tisp:overall>4.0</tisp:overall>
+      </tisp:Populism>
+      <tisp:Communication>
+        <tisp:Channel>
+          <tisp:name>Social Media</tisp:name>
+          <tisp:usageFrequency>4.8</tisp:usageFrequency>
+        </tisp:Channel>
+        <tisp:primary>Social Media</tisp:primary>
+        <tisp:frequency>4.8</tisp:frequency>
+        <tisp:scienceKnowledge>1.7</tisp:scienceKnowledge>
+      </tisp:Communication>
+      <tisp:Climate>
+        <tisp:attitude>3.5</tisp:attitude>
+        <tisp:policySupport>3.0</tisp:policySupport>
+      </tisp:Climate>
+      <tisp:PoliticalReligious>
+        <tisp:politicalAlignment>right</tisp:politicalAlignment>
+        <tisp:religiosity>4.2</tisp:religiosity>
+      </tisp:PoliticalReligious>
+    </tisp:Respondent>
+  </tisp:Respondents>
+</tisp:TISP_Dataset>

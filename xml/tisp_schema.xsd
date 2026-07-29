@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://group7.tisp.org/schema"
+           xmlns:tisp="http://group7.tisp.org/schema"
+           elementFormDefault="qualified">
+
+  <!-- ============================================================
+       TISP Dataset XML Schema
+       Group 7 — Science Communication Channels and Public Trust
+       Source: Mede, Cologna et al. (2025), Scientific Data 12:114
+       Models the cleaned dataset (ds_main, N=71,922, 68 countries)
+       ============================================================ -->
+
+  <xs:element name="TISP_Dataset" type="tisp:DatasetType"/>
+
+  <xs:complexType name="DatasetType">
+    <xs:sequence>
+      <xs:element name="Metadata" type="tisp:MetadataType"/>
+      <xs:element name="Respondents" type="tisp:RespondentsType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MetadataType">
+    <xs:sequence>
+      <xs:element name="DatasetName" type="xs:string" fixed="TISP: Trust in Science and Science-Related Populism"/>
+      <xs:element name="SourceCitation" type="xs:string"/>
+      <xs:element name="CollectionPeriod">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Start" type="xs:gYearMonth"/>
+            <xs:element name="End" type="xs:gYearMonth"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SampleSize" type="xs:positiveInteger"/>
+      <xs:element name="CountryCount" type="xs:positiveInteger"/>
+      <xs:element name="License" type="xs:string" fixed="CC BY 4.0"/>
+      <xs:element name="Repository" type="xs:anyURI" fixed="https://osf.io/5c3qd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RespondentsType">
+    <xs:sequence>
+      <xs:element name="Respondent" type="tisp:RespondentType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RespondentType">
+    <xs:sequence>
+      <xs:element name="Demographics" type="tisp:DemographicsType"/>
+      <xs:element name="Trust_Scale" type="tisp:TrustScaleType"/>
+      <xs:element name="Populism" type="tisp:PopulismType"/>
+      <xs:element name="Communication" type="tisp:CommunicationType"/>
+      <xs:element name="Climate" type="tisp:ClimateType"/>
+      <xs:element name="PoliticalReligious" type="tisp:PoliticalReligiousType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="country" type="tisp:CountryCodeType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="DemographicsType">
+    <xs:sequence>
+      <xs:element name="Gender">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
+            <xs:enumeration value="other"/>
+            <xs:enumeration value="prefer_not_to_say"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AgeGroup" type="xs:string"/>
+      <xs:element name="Education" type="xs:string"/>
+      <xs:element name="Residence">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="urban"/>
+            <xs:enumeration value="suburban"/>
+            <xs:enumeration value="rural"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IncomeGroup" type="xs:string"/>
+      <xs:element name="CountryIncomeGroup">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="high_income"/>
+            <xs:enumeration value="upper_middle_income"/>
+            <xs:enumeration value="lower_middle_income"/>
+            <xs:enumeration value="low_income"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TrustScaleType">
+    <xs:sequence>
+      <xs:element name="Item" type="tisp:ScaleItemType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="overall" type="tisp:LikertScoreType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PopulismType">
+    <xs:sequence>
+      <xs:element name="Item" type="tisp:ScaleItemType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="overall" type="tisp:LikertScoreType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CommunicationType">
+    <xs:sequence>
+      <xs:element name="Channel" type="tisp:ChannelType" maxOccurs="unbounded"/>
+      <xs:element name="primary" type="tisp:PrimaryChannelType"/>
+      <xs:element name="frequency" type="tisp:LikertScoreType"/>
+      <xs:element name="scienceKnowledge" type="tisp:LikertScoreType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ChannelType">
+    <xs:sequence>
+      <xs:element name="name" type="tisp:PrimaryChannelType"/>
+      <xs:element name="usageFrequency" type="tisp:LikertScoreType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="PrimaryChannelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Social Media"/>
+      <xs:enumeration value="Television"/>
+      <xs:enumeration value="Scientific Journals"/>
+      <xs:enumeration value="Newspapers"/>
+      <xs:enumeration value="Radio"/>
+      <xs:enumeration value="Family/Friends"/>
+      <xs:enumeration value="Online News Sites"/>
+      <xs:enumeration value="Other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ClimateType">
+    <xs:sequence>
+      <xs:element name="attitude" type="tisp:LikertScoreType"/>
+      <xs:element name="policySupport" type="tisp:LikertScoreType"/>
+      <xs:element name="behaviour" type="tisp:LikertScoreType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PoliticalReligiousType">
+    <xs:sequence>
+      <xs:element name="politicalAlignment" type="xs:string" minOccurs="0"/>
+      <xs:element name="religiosity" type="tisp:LikertScoreType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ScaleItemType">
+    <xs:simpleContent>
+      <xs:extension base="tisp:LikertScoreType">
+        <xs:attribute name="code" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="LikertScoreType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CountryCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

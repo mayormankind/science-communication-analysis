@@ -1,0 +1,17 @@
+# Raw data — too large / redistribute via OSF link instead, not git
+data/raw/ds_main.csv
+data/raw/*.csv
+*.csv
+!data/metadata/*.csv
+!figures/table1_descriptives.csv
+
+# Generated outputs (regenerate via scripts, don't bloat the repo)
+xml/tisp_full.xml
+figures/*.png
+figures/*.html
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+venv/
+.venv/
