@@ -24,8 +24,8 @@ on trust operating through science knowledge (path a = 0.139, path b =
 0.325, indirect effect = 0.045), with a smaller but significant direct
 effect (c' = 0.070). A one-way ANOVA found significant differences in
 mean trust by primary communication channel (F = 27.963, p < 0.001), with
-newspaper and television users reporting highest trust and social-media-
-primary users reporting the lowest. These findings suggest that science
+newspaper and television users reporting the highest trust and family/friends-
+and social-media-primary users reporting the lowest. These findings suggest that science
 communication interventions targeting channel diversity and science
 literacy simultaneously are most likely to improve public trust, and that
 country-level structural factors warrant explicit modelling in any global
@@ -220,21 +220,24 @@ Table 1 -- Descriptive statistics: mean trust in scientists by country income gr
 
 Country income group | count | mean  | std   | min  | 25%   | 50%   | 75%   | max
 ---------------------|-------|-------|-------|------|-------|-------|-------|----
-high_income          | 45180 | 3.626 | 0.676 | 1.00 | 3.250 | 3.667 | 4.083 | 5.0
-low_income           |   966 | 3.636 | 0.750 | 1.00 | 3.167 | 3.667 | 4.167 | 5.0
-lower_middle_income  |  8871 | 3.800 | 0.716 | 1.00 | 3.333 | 3.833 | 4.333 | 5.0
-upper_middle_income  | 16866 | 3.552 | 0.737 | 1.00 | 3.083 | 3.583 | 4.000 | 5.0
+high_income          | 47493 | 3.615 | 0.676 | 1.00 | 3.167 | 3.667 | 4.083 | 5.0
+low_income           |  1374 | 3.613 | 0.755 | 1.00 | 3.167 | 3.667 | 4.167 | 5.0
+lower_middle_income  |  9918 | 3.746 | 0.747 | 1.00 | 3.333 | 3.833 | 4.250 | 5.0
+upper_middle_income  | 13098 | 3.599 | 0.736 | 1.00 | 3.167 | 3.667 | 4.083 | 5.0
 
 Trust scores on a 1-5 Likert scale. N = 71,883 analytic sample.
 Full data: figures/table1_descriptives.csv.
 
 Somewhat counter-intuitively, lower-middle-income country respondents
-reported the highest mean trust (M = 3.800, SD = 0.716), while upper-
-middle-income countries showed the lowest mean trust (M = 3.552, SD =
-0.737). High-income countries clustered at M = 3.626 (SD = 0.676),
-suggesting a non-linear relationship between country wealth and public
-trust in science. The standard deviations are broadly similar across
-income groups (range 0.676 to 0.750), indicating comparable within-group
+reported the highest mean trust (M = 3.746, SD = 0.747), while upper-
+middle-income countries showed the lowest mean trust (M = 3.599, SD =
+0.736). High-income and low-income countries showed nearly identical mean
+trust (M = 3.615, SD = 0.676 and M = 3.613, SD = 0.755, respectively) —
+a gap of 0.002 scale points that is substantively negligible. The pattern
+confirms a non-linear relationship between country wealth and public trust
+in science: the middle of the income distribution is not the middle of the
+trust distribution. The standard deviations are broadly similar across
+income groups (range 0.676 to 0.755), indicating comparable within-group
 heterogeneity everywhere rather than greater polarisation in any one
 economic stratum. Median trust values (50th percentile) are consistently
 slightly above means, reflecting mild left skew in the distribution; most
@@ -417,7 +420,7 @@ Zealand cluster toward the high-trust end, while Eastern European and
 Central Asian countries (Kazakhstan, Albania, Russia) and Japan cluster
 toward the low-trust end. The high-trust pattern in lower-middle-income
 countries such as India and Nigeria, which also appear in Table 1's income-
-group comparison (lower_middle_income mean = 3.800), may reflect lower
+group comparison (lower_middle_income mean = 3.746), may reflect lower
 baseline scepticism toward expert institutions in developmental contexts
 where science is more strongly associated with economic progress and public
 health improvement. Japan's low trust relative to its scientific

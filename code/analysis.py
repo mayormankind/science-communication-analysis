@@ -63,6 +63,9 @@ CLIM_POLSUPPORT_ITEMS = [
 ]
 
 COUNTRY_INCOME_MAP = {
+    # World Bank income classifications — FY2023 vintage (effective 1 July 2022,
+    # based on 2021 GNI per capita). Used throughout because it covers the dominant
+    # portion of the TISP data-collection window (Nov 2022 – Aug 2023).
     "ALB": "upper_middle_income", "ARG": "upper_middle_income",
     "AUS": "high_income",         "AUT": "high_income",
     "BEL": "high_income",         "BGD": "lower_middle_income",
@@ -97,6 +100,15 @@ COUNTRY_INCOME_MAP = {
     "ZMB": "lower_middle_income", "BWA": "upper_middle_income",
     "CMR": "lower_middle_income", "ECU": "upper_middle_income",
     "PER": "upper_middle_income", "CIV": "lower_middle_income",
+    # --- 10 codes missing from original map; added FY2023 classifications ---
+    "BGR": "upper_middle_income", "BOL": "lower_middle_income",
+    "COD": "low_income",          "CRI": "upper_middle_income",
+    "CYP": "high_income",         "GEO": "upper_middle_income",
+    "HKG": "high_income",         "KAZ": "upper_middle_income",
+    "NIC": "lower_middle_income",
+    # TWN: not in the World Bank's official country list; classified as high_income
+    # here based on GNI per capita (~USD 33,000 in 2021), not an official WB figure.
+    "TWN": "high_income",
 }
 
 def load(path):
