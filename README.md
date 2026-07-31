@@ -26,6 +26,8 @@ manuscript/
   manuscript.txt                # IMRAD manuscript source, 4,000-6,000 words (edit this)
   manuscript.docx / .pdf        # Generated via `pandoc manuscript.txt -o manuscript.docx`
   presentation_script.txt       # ~10-min spoken script for the MP4 recording
+notebooks/
+  analysis.ipynb               # Rendered companion to code/analysis.py — all outputs pre-executed
 figures/
   trust_choropleth.html
   anova_channel_boxplot.png
