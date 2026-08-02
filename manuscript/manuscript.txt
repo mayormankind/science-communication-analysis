@@ -399,6 +399,22 @@ engagement with scientific information matters more than quantity. Science
 communicators should therefore prioritise content and format strategies
 that build genuine understanding rather than maximising reach alone.
 
+By demonstrating both a significant indirect path and a significant direct path,
+our SEM results provide empirical resolution to the theoretical tension between
+epistemic (knowledge-building) and source-credibility mechanisms of trust formation.
+Rather than operating as mutually exclusive pathways, both mechanisms function
+simultaneously to shape public attitudes. The significant indirect effect (a*b = 0.045)
+confirms the knowledge-building mechanism, showing that information exposure translates
+into institutional trust by enhancing epistemic comprehension of scientific methods.
+Concurrently, the significant direct effect (c' = 0.070) substantiates the credibility
+mechanism, indicating that repeated channel exposure cultivates source trust independently
+of cognitive or factual knowledge gains. Crucially, comparing the path coefficients reveals
+that the epistemic pathway exerts a substantially stronger influence on trust than does
+direct channel exposure (b = 0.325 vs. c' = 0.070). This suggests that while public
+relations campaigns relying on repeated exposure can nudge trust via familiarity,
+substantive educational interventions that deepen the public's understanding of the
+scientific method remain the primary lever for generating durable trust in scientists.
+
 The ANOVA result — that primary channel significantly predicts trust
 (F = 27.963, p < 0.001), with newspaper and television users reporting
 higher trust than social-media and family/friends users — is consistent
@@ -430,6 +446,8 @@ restraint to a measured (rather than sceptical) expression of trust
 on surveys (Nakayachi et al., 2020). These geographic patterns confirm
 that culture and institutional history cannot be reduced to economic
 development as predictors of public trust in science.
+
+Strengths: Despite these caveats, this study possesses several key methodological strengths. First, the massive sample size of over 70,000 respondents provides exceptional statistical power to detect even very small effect sizes and run highly stable multi-level models across national groups. Second, the wide geographic coverage across 68 countries using survey instruments translated into 37 languages represents a major advancement over the Western, educated, industrialised, rich, and democratic (WEIRD) single-country samples that have historically dominated science communication literature. Finally, our multi-method analytical design—combining multi-level regression (MLM) to partition national variance, structural equation modelling (SEM) to trace mediation pathways, ANOVA to assess channel-specific differences, and interactive geographic visualisations—ensures robust, convergent evidence that does not rely on the assumptions of a single statistical framework.
 
 Limitations: TISP trust and knowledge measures are self-report, collected
 via a single cross-sectional wave, so causal directionality between
